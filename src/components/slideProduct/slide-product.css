@@ -1,0 +1,106 @@
+.slide-products{
+    width: 100%;
+    height: 400px;
+    padding: 50px 0;
+}
+.top-slide h2{
+    font-size: 30px;
+    color: var(--main-color);
+    font-weight: 600;
+}
+.top-slide p{
+    font-size: 16px;
+}
+.top-slide{
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 1px splid var(--border-color);
+    &::after{
+        content: '';
+        position: absolute;
+        color: var(--main-color);
+        bottom: -1px;
+        width: 100px;
+        background-color: var(--main-color);
+        height: 2px;
+        margin-top: 10px;
+    }
+}
+
+
+
+.product{
+    width: 250px;
+    background-color: var(--white-color);
+    padding: 25px 15px;
+    border: 1px solid var(--border-color);
+    transition: .5s;
+    border-radius: 5px;
+    overflow: hidden;
+    &:hover{
+        border: 2px solid var(--main-color);
+        box-shadow: 10px 10px 15px #949494;
+    }
+}
+.product:hover .icons{
+    right: 20px;
+    transition: .3s;
+}
+.icons{
+    position: relative;
+}
+.product .img-product{
+    position: relative;
+    height: 100px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-product img{
+    height: 160px;
+    width: auto;
+    margin-bottom: 36px;
+}
+.product .name{
+    margin-bottom: 10px;
+    color: var(--color-heading);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.product .stars{
+    margin: 15px 0;
+    display: flex;
+    gap: 5px;
+}
+.stars svg{
+    fill: #f8d941;
+    font-size: 15px;
+}
+.product .price{
+    font-weight: bold;
+    font-size: 20px;
+}
+.product .icons{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    right: 20px;
+    gap: 10px;
+    opacity: 1;
+    right: -50px;
+}
+.icons span{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background: var(--bg-color);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
