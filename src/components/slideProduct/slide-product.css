@@ -31,6 +31,7 @@
 
 .product{
     width: 250px;
+    height: 300px;
     background-color: var(--white-color);
     padding: 25px 15px;
     border: 1px solid var(--border-color);
@@ -43,16 +44,17 @@
     }
 }
 .product:hover .icons{
-    right: 20px;
+    right: 15px;
     transition: .3s;
 }
 .icons{
     position: relative;
+    background: none;
 }
 .product .img-product{
     position: relative;
-    height: 100px;
-    padding: 0 20px;
+    height: 158px;
+    padding: 0px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,4 +105,8 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.product-slide-title{
+    text-transform: capitalize;
 }

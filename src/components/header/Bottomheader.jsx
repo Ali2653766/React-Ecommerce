@@ -24,7 +24,7 @@ function Bottomheader() {
     fetch('https://dummyjson.com/products/categories')
       .then((res) => res.json())
       .then((categoryData) => {
-        console.log("Fetched category data:", categoryData);
+        
         setData(categoryData);
       })
       .catch((error) => console.error("Error fetching categories:", error));

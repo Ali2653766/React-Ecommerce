@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaStar,FaStarHalfAlt,FaCartArrowDown,FaShare,FaRegHeart } from "react-icons/fa";
 
 
-function Product() {
+function Product({thumbnail,price,title}) {
   return (
+    <>
     <div className='product'>
       <div className="img-product">
-        <img src="" alt="" />
+        <img src={thumbnail} alt={title} />
+        
       </div>
 
-      <p className='name'>Iphone 12 pro max</p>
+      <p className='name'>{title}</p>
       <div className="stars">
         <FaStar />
         <FaStar />
@@ -18,15 +20,16 @@ function Product() {
         <FaStarHalfAlt />
       </div>
 
-        <p className="price">$ 1000</p>
+        <p className="price">$ {price}</p>
 
+        
         <div className="icons">
             <span><FaCartArrowDown /></span>
             <span><FaRegHeart /></span>
             <span><FaShare /></span>
         </div>
-
     </div>
+    </>
   )
 }
 
