@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { FaStar,FaStarHalfAlt,FaCartArrowDown,FaShare,FaRegHeart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
-
-function Product({thumbnail,price,title}) {
+function Product({thumbnail,price,title,id}) {
   return (
     <>
-    <div className='product'>
-      <div className="img-product">
+    <div to='/' className='product'>
+      <Link to={`/products/${id}`}>
+        <div className="img-product">
         <img src={thumbnail} alt={title} />
         
       </div>
@@ -20,6 +21,7 @@ function Product({thumbnail,price,title}) {
         <FaStarHalfAlt />
       </div>
 
+      </Link>
         <p className="price">$ {price}</p>
 
         

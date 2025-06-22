@@ -2,8 +2,14 @@ import React from 'react'
 import Home from './pages/home/Home'
 import Topheader from './components/header/Topheader'
 import Bottomheader from './components/header/Bottomheader'
+import { Routes,Route } from 'react-router-dom'
+import ProductDetails from './pages/ProductDetails'
+
 
 function App() {
+
+  
+
 
   return (
     <>
@@ -12,7 +18,12 @@ function App() {
         <Bottomheader/>
       </header>
 
-      <Home />
+      <Routes>
+        <Route path='/' element={<Home/>} ></Route>
+        <Route path='/products/:id' element={<ProductDetails />} />
+      </Routes>
+
+      
     </>
   )
 }
