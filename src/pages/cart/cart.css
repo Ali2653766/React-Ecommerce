@@ -1,0 +1,154 @@
+.checkout {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 32px 24px;
+}
+
+.ordersummery h1 {
+  font-size: 2rem;
+  color: var(--main-color, #1dbf73);
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item_cart {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 12px;
+  gap: 15px;
+  transition: box-shadow 0.2s;
+}
+
+.item_cart:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+}
+
+.image_cart img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+.details_cart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.details_cart h2 {
+  font-size: 1.1rem;
+  color: #222;
+  margin: 0;
+}
+
+.details_cart .price {
+  color: var(--main-color, #1dbf73);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.quantity button {
+  background: #e6fff2;
+  border: none;
+  color: var(--main-color, #1dbf73);
+  font-size: 1.2rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quantity button:hover {
+  background: #1dbf73;
+  color: #fff;
+}
+
+.quantity span.quantity {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+  background: #f3f3f3;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.delete_cart {
+  display: flex;
+  align-items: center;
+}
+
+.delete_cart .delete {
+  background: #ffe6e6;
+  border: none;
+  color: #ff4d4f;
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.delete_cart .delete:hover {
+  background: #ff4d4f;
+  color: #fff;
+}
+
+.items p {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  margin: 25px 0;
+}
+
+.button_div {
+  text-align: right;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.button_div button {
+  width: 100%;
+  background: var(--main-color, #1dbf73);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.button_div button:hover {
+  background: #17a864;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}

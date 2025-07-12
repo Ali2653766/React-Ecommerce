@@ -9,6 +9,7 @@
 
 .top-header .container{
     display: flex;
+    height: 80px;
     align-items: center;
     justify-content: space-between;
     padding: 15px 0;
@@ -83,13 +84,14 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    height: 50px;
+    height: 40px;
 
 }
 .category{
     width: 220px;
     height: 100%;
     position: relative;
+    z-index: 12;
 }
 .category-btn{
     color: var(--white-color);
