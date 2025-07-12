@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import SlideProduct from "../components/slideProduct/SlideProduct";
 import { Link } from "react-router-dom";
@@ -10,8 +10,15 @@ import {
   FaRegHeart,
 } from "react-icons/fa";
 import Loading from "../components/loading/Loading";
+import { CardContext } from "../components/context/CardContext";
+import AutoScrollTop from "../components/AutoTop";
+
+
+
 
 function ProductDetails() {
+  const [cart, addToCart, removeFromCart, updateCount] = useContext(CardContext);
+
   const [product, setproduct] = useState(null);
   const [loading, setloading] = useState(true);
   const [similar, setSimilar] = useState([]);
@@ -70,8 +77,9 @@ function ProductDetails() {
           </p>
           <p>{product.description}</p>
 
-          <button className="add-to-cart">
-            Add to Cart{" "}
+          <button onClick={() => addToCart(product)} className={'add-to-cart' + (cart.some(i => i.id === product.id) ? ' in-cart' : '')}>
+            {cart.some(i => i.id === product.id) ? <p>Added To Cart</p> : <p>Add to Cart</p>}{" "}
+            
             <span>
               <FaCartArrowDown />
             </span>

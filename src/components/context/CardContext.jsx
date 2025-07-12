@@ -12,10 +12,10 @@ export default function CardProvider({ children }) {
     // State for toast notification
     const [toast, setToast] = useState({ show: false, message: "" });
 
-    // Show a toast message for 2 seconds
+    // Show a toast message for 3 seconds
     const showToast = (message) => {
         setToast({ show: true, message });
-        setTimeout(() => setToast({ show: false, message: "" }), 2000);
+        setTimeout(() => setToast({ show: false, message: "" }), 3000);
     };
 
     // Add a product to the cart or increase its quantity if it already exists

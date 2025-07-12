@@ -14,7 +14,6 @@ function Product({item, thumbnail, price, title, id }) {
   const [cart, addToCart] = useContext(CardContext); 
 
   const isInCart = cart.some(i => i.id === id)
-  console.log("Cart items:", cart);
   
   return (
     <>
