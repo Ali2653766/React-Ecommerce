@@ -19,6 +19,10 @@ function Bottomheader() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    setCategoryOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
     fetch("https://dummyjson.com/products/categories")
       .then((res) => res.json())
       .then((categoryData) => {
@@ -46,7 +50,7 @@ function Bottomheader() {
             >
               {data &&
                 data.map((category) => (
-                  <Link to="" key={category.slug}>
+                  <Link to={`/category/${category.slug}`} key={category.slug}>
                     {" "}
                     {category.name}{" "}
                   </Link>

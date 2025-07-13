@@ -4,6 +4,7 @@ import "./home.css";
 import SlideProduct from "../../components/slideProduct/SlideProduct";
 import { data } from "react-router-dom";
 import Loading from "../../components/loading/Loading";
+import PageTransition from "../../components/PageTransition";
 
 function Home() {
   const [products, setproducts] = useState({});
@@ -13,11 +14,13 @@ function Home() {
     "smartphones",
     "mobile-accessories",
     "sports-accessories",
+    'groceries',
     "laptops",
     "womens-watches",
     "Furniture",
     "mens-shirts",
     "mens-shoes",
+    
   ];
 
   useEffect(() => {
@@ -47,21 +50,23 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <Slider />
+    <PageTransition>
+      <div>
+        <Slider />
 
-      {loading ? (
-        <Loading />
-      ) : (
-        categories.map((category) => (
-          <SlideProduct
-            key={category}
-            data={products[category]}
-            title={category.replace("-", " ")}
-          />
-        ))
-      )}
-    </div>
+        {loading ? (
+          <Loading />
+        ) : (
+          categories.map((category) => (
+            <SlideProduct
+              key={category}
+              data={products[category]}
+              title={category.replace("-", " ")}
+            />
+          ))
+        )}
+      </div>
+    </PageTransition>
   );
 }
 

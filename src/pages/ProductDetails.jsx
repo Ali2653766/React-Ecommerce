@@ -12,12 +12,11 @@ import {
 import Loading from "../components/loading/Loading";
 import { CardContext } from "../components/context/CardContext";
 import AutoScrollTop from "../components/AutoTop";
-
-
-
+import PageTransition from "../components/PageTransition";
 
 function ProductDetails() {
-  const [cart, addToCart, removeFromCart, updateCount] = useContext(CardContext);
+  const [cart, addToCart, removeFromCart, updateCount] =
+    useContext(CardContext);
 
   const [product, setproduct] = useState(null);
   const [loading, setloading] = useState(true);
@@ -54,62 +53,73 @@ function ProductDetails() {
   if (!product) return <p>Product not found</p>;
 
   return (
-    <>
-      <div className="container-details">
-        <div>
-          <img
-            className="product-details-img"
-            src={product.images[0]}
-            alt={product.title}
-          />
-        </div>
-        <div className="product-details-info">
-          <h2>{product.title}</h2>
-          <p className="stars">
-            {Array(Math.round(product.rating)).fill("⭐").join("")}
-          </p>
-          <p className="price">${product.price}</p>
-          <p>
-            Brand <span>{product.brand}</span>
-          </p>
-          <p>
-            Category <span>{product.category}</span>
-          </p>
-          <p>{product.description}</p>
-
-          <button onClick={() => addToCart(product)} className={'add-to-cart' + (cart.some(i => i.id === product.id) ? ' in-cart' : '')}>
-            {cart.some(i => i.id === product.id) ? <p>Added To Cart</p> : <p>Add to Cart</p>}{" "}
-            
-            <span>
-              <FaCartArrowDown />
-            </span>
-          </button>
-
-          <div className="icons">
-            <span>
-              <FaRegHeart />
-            </span>
-            <span>
-              <FaShare />
-            </span>
+    <PageTransition key={id}>
+      <>
+        <div className="container-details">
+          <div>
+            <img
+              className="product-details-img"
+              src={product.images[0]}
+              alt={product.title}
+            />
           </div>
+          <div className="product-details-info">
+            <h2>{product.title}</h2>
+            <p className="stars">
+              {Array(Math.round(product.rating)).fill("⭐").join("")}
+            </p>
+            <p className="price">${product.price}</p>
+            <p>
+              Brand <span>{product.brand}</span>
+            </p>
+            <p>
+              Category <span>{product.category}</span>
+            </p>
+            <p>{product.description}</p>
 
-          <div className="images">
-            <div className="im-product">
-              {product.images.map((img, index) => (
-                <Link to={`/products/${id}`} key={index}>
-                  <img src={img} alt={product.title} />
-                </Link>
-              ))}
+            <button
+              onClick={() => addToCart(product)}
+              className={
+                "add-to-cart" +
+                (cart.some((i) => i.id === product.id) ? " in-cart" : "")
+              }
+            >
+              {cart.some((i) => i.id === product.id) ? (
+                <p>Added To Cart</p>
+              ) : (
+                <p>Add to Cart</p>
+              )}{" "}
+              <span>
+                <FaCartArrowDown />
+              </span>
+            </button>
+
+            <div className="icons">
+              <span>
+                <FaRegHeart />
+              </span>
+              <span>
+                <FaShare />
+              </span>
+            </div>
+
+            <div className="images">
+              <div className="im-product">
+                {product.images.map((img, index) => (
+                  <Link to={`/products/${id}`} key={index}>
+                    <img src={img} alt={product.title} />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {similar.length > 0 && (
-        <SlideProduct data={similar} title="Similar Products" />
-      )}
-    </>
+        {similar.length > 0 && (
+          <SlideProduct data={similar} title="Similar Products" />
+        )}
+      </>
+    </PageTransition>
   );
 }
 

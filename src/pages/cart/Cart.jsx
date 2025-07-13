@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./cart.css";
 import { FaTrashAlt } from "react-icons/fa";
 import { CardContext } from "../../components/context/CardContext";
+import PageTransition from "../../components/PageTransition";
 
 function Cart() {
   // Get cart items, removeFromCart, and updateCount functions from context
@@ -9,12 +10,13 @@ function Cart() {
 
   // Calculate the total price of all items in the cart
   const totalPrice = cart.reduce((sum, item) => {
-    const price = Number(item.price);
-    return sum + (isNaN(price) ? 0 : price);
-  }, 0);
-
+  const price = Number(item.price);
+  const count = Number(item.count) || 1;
+  return sum + (isNaN(price) ? 0 : price * count);
+}, 0);
   return (
-    <div className="checkout">
+    <PageTransition>
+      <div className="checkout">
       <div className="ordersummery">
         <h1>Order Summery</h1>
         <div className="items">
@@ -76,6 +78,7 @@ function Cart() {
         </div>
       </div>
     </div>
+    </PageTransition>
   );
 }
 

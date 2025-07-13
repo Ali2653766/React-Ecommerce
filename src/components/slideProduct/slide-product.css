@@ -346,3 +346,27 @@
 .img-product {
   margin-bottom: 10px;
 }
+
+.product {
+  position: relative; /* Add this! */
+  /* ...existing styles... */
+}
+
+.product .icons {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: right 0.3s, opacity 0.3s;
+}
+
+.product:hover .icons {
+  right: 40px;
+  opacity: 1;
+  pointer-events: auto;
+}

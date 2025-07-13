@@ -6,6 +6,9 @@ import { Routes, Route } from "react-router-dom";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/cart/Cart";
 import AutoScrollTop from "./components/AutoTop";
+import { AnimatePresence } from "framer-motion";
+import PageTransition from "./components/PageTransition";
+import CategoryPage from "./pages/category page/CategoryPage";
 
 function App() {
   return (
@@ -15,11 +18,16 @@ function App() {
         <Bottomheader />
       </header>
       <AutoScrollTop/>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/products/:id" element={<ProductDetails />} />
-      </Routes>
+      <AnimatePresence>
+        
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
+        </Routes>
+        
+      </AnimatePresence>
     </>
   );
 }
