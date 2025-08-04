@@ -16,8 +16,8 @@
   gap: 10px;
 }
 
-.category-header h1 {
-  font-size: 2rem;
+.category-header h1,.no-results {
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--main-color, #1dbf73);
   margin: 0;

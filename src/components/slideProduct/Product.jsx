@@ -43,7 +43,7 @@ function Product({item, thumbnail, price, title, id }) {
           <span className="btn-cart" onClick={() => addToCart( item )}>
             <FaCartArrowDown />
           </span>
-          <span>
+          <span className="btn-favorite" onClick={() => handleFavorites(item)}>
             <FaRegHeart />
           </span>
           <span>

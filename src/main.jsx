@@ -5,12 +5,15 @@ import App from './App.jsx'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import CardProvider from './components/context/CardContext.jsx'
+import FavoriteProvider from './components/context/FavoriteContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename='/'>
       <CardProvider>
-        <App/>
+        <FavoriteProvider>
+          <App/>
+        </FavoriteProvider>
       </CardProvider>
     </BrowserRouter>
   </React.StrictMode>,

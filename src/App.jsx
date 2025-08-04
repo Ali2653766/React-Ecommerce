@@ -9,6 +9,7 @@ import AutoScrollTop from "./components/AutoTop";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./components/PageTransition";
 import CategoryPage from "./pages/category page/CategoryPage";
+import Search from "./pages/Search/Search";
 
 function App() {
   return (
@@ -23,8 +24,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/search" element={<Search />}></Route>
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/category/:category" element={<CategoryPage />} />
+          
         </Routes>
         
       </AnimatePresence>
