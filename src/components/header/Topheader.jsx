@@ -11,38 +11,32 @@ import { FavoritesContext } from "../context/FavoriteContext";
 import PageTransition from "../PageTransition.jsx";
 
 function Topheader() {
-  const { favorites, handleFavorites, removeFromFavorites } = useContext(FavoritesContext);
-
-  const [cart] = useContext(CardContext);
+  const [cart, addToCart, removeFromCart, updateCount,addToFavorites, favorites,removeFromFavorites] = useContext(CardContext);
   return (
-      <div className="top-header">
-        <div className="container">
-          <Link to="/" className="logo">
-            <img src={logo} alt="logo" />
-          </Link>
+    <div className="top-header">
+      <div className="container">
+        <Link to="/" className="logo">
+          <img src={logo} alt="logo" />
+        </Link>
 
-          <SearchBox />
+        <SearchBox />
 
-          <div className="header-icon">
-            <div className="icon">
-              <Link to='/favorite' >
-                <FaRegHeart />
-              <span className="count">{favorites?.length || 0}</span>
-
-              </Link>
-              
-              
-            </div>
-            <div className="icon">
-              <Link to='/cart' >
-                <TiShoppingCart />
+        <div className="header-icon">
+          <div className="icon">
+            <Link to="/favorites">
+              <FaRegHeart />
+              <span className="count">{favorites.length || 0}</span>
+            </Link>
+          </div>
+          <div className="icon">
+            <Link to="/cart">
+              <TiShoppingCart />
               <span className="count">{cart.length}</span>
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
-      
+    </div>
   );
 }
 

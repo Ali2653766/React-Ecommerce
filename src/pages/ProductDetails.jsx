@@ -15,14 +15,29 @@ import AutoScrollTop from "../components/AutoTop";
 import PageTransition from "../components/PageTransition";
 
 function ProductDetails() {
-  const [cart, addToCart, removeFromCart, updateCount] =
-    useContext(CardContext);
+  const [
+    cart,
+    addToCart,
+    removeFromCart,
+    updateCount,
+    addToFavorites,
+    favorites,
+    removeFromFavorites,
+  ] = useContext(CardContext);
 
   const [product, setproduct] = useState(null);
   const [loading, setloading] = useState(true);
   const [similar, setSimilar] = useState([]);
   const { id } = useParams();
+  
 
+  const handleFavorites = (item) => {
+    if (favorites.some((favorites) => favorites.id === item.id)) {
+      removeFromFavorites(item.id);
+    } else {
+      addToFavorites(item);
+    }
+  };
   useEffect(() => {
     const fetchproduct = async () => {
       try {
@@ -51,7 +66,7 @@ function ProductDetails() {
     return <Loading />;
   }
   if (!product) return <p>Product not found</p>;
-
+  const isInFavorites = favorites.some((i) => i.id === product.id);
   return (
     <PageTransition key={id}>
       <>
@@ -95,9 +110,37 @@ function ProductDetails() {
             </button>
 
             <div className="icons">
-              <span>
-                <FaRegHeart />
-              </span>
+             <span
+  className="btn-favorite"
+  onClick={() => handleFavorites(product)}
+  style={
+    isInFavorites
+      ? {
+          color: "var(--white-color)",
+          backgroundColor: "var(--main-color)",
+          borderRadius: "50%",
+          width: "40px",
+          height: "40px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          cursor: "pointer",
+          transition: "background-color 0.3s ease"
+        }
+      : {
+          borderRadius: "50%",
+          width: "40px",
+          height: "40px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          cursor: "pointer",
+          transition: "background-color 0.3s ease"
+        }
+  }
+>
+  <FaRegHeart />
+</span>
               <span>
                 <FaShare />
               </span>

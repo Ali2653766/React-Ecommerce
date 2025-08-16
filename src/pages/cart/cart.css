@@ -152,3 +152,22 @@
   background: #17a864;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
+.buy-btn {
+  margin-top: 12px;
+  background: var(--main-color, #1dbf73);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.buy-btn:hover {
+  background: #17a864;
+}
