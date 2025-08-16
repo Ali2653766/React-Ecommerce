@@ -7,7 +7,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 import "./header.css";
 import SearchBox from "./SearchBox.jsx";
-import { FavoritesContext } from "../context/FavoriteContext";
+
 import PageTransition from "../PageTransition.jsx";
 
 function Topheader() {
