@@ -9,7 +9,7 @@ import AutoScrollTop from "./components/AutoTop";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./components/PageTransition";
 import CategoryPage from "./pages/category page/CategoryPage";
-import Search from "./pages/Search/Search";
+import Search from "./pages/search/Search";
 import Favorites from "./pages/favorites/Favorites";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";

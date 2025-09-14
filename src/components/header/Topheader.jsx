@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { CardContext } from "../context/CardContext";
 import { Link } from "react-router-dom";
-import logo from "../../img/logo.png";
+
 import { FaRegHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 import "./header.css";
@@ -16,7 +16,7 @@ function Topheader() {
     <div className="top-header">
       <div className="container">
         <Link to="/" className="logo">
-          <img src={logo} alt="logo" />
+          <img src="/img/logo.png" alt="logo" />
         </Link>
 
         <SearchBox />
