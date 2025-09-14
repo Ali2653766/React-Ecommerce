@@ -9,7 +9,6 @@ import { FaUserPlus } from "react-icons/fa6";
 const NavLinks = [
   { title: "Home", link: "/" },
   { title: "About", link: "/about" },
-  { title: "Accessoires", link: "/accessoires" },
   { title: "Contact", link: "/contact" },
 ];
 

@@ -11,6 +11,8 @@ import PageTransition from "./components/PageTransition";
 import CategoryPage from "./pages/category page/CategoryPage";
 import Search from "./pages/Search/Search";
 import Favorites from "./pages/favorites/Favorites";
+import Contact from "./pages/contact/Contact";
+import About from "./pages/about/About";
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/category/:category" element={<CategoryPage />} />
-          
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />}/>
+
         </Routes>
         
       </AnimatePresence>
