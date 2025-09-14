@@ -5,6 +5,12 @@ Browse products by category, search, view details, add to cart, and manage your 
 
 ---
 
+## 🚀 Live Demo
+
+[https://react-ecommerce-delta-teal.vercel.app/](https://react-ecommerce-delta-teal.vercel.app/)
+
+---
+
 ## Features
 
 - **Product Catalog:** Browse products by category, fetched from a remote API.
